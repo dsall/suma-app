@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
+import { Button, Card, CardBody,  } from 'mdbreact';
 
 
 const EMCard = (props) => {

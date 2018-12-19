@@ -62,15 +62,12 @@ export class MapContainer extends Component {
         data1: []
       };
       this.GetData();
-      this.GetData1();
     }
 
     componentDidMount() {
       interval = setInterval(() => {
-  
 
           this.GetData();
-          this.GetData1();
   
       }, 10000);
     }
@@ -78,22 +75,15 @@ export class MapContainer extends Component {
     componentWillUnmount() {
       clearInterval(interval);
     }
+
       GetData = async () => {
-        const response = await axios.get('http://18.223.98.134:3002/suma/+16465353881');
-        if(response.data.success){
-          this.setState({
-              data: {lat: response.data.data.location.coords.latitude, lng: response.data.data.location.coords.longitude }
-          })
-          // console.log(response.data.data.location)
-        }
-      }
-      GetData1 = async () => {
-        const response = await axios.get('http://localhost:3002/suma');
+        const response = await axios.get('http://18.223.98.134:3002/suma');
+        // console.log(response);
         if(response.data.success){
           this.setState({
               data1: response.data.data
           })
-          console.log(this.state.data1)
+           console.log(this.state.data1)
   
         }
       }
